@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - GameHub</title>
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>Game<span>Hub</span>
+                </div>
+                <nav>
+                    <ul>
+                         <li><a href="glavnaya stranica.html">Главная</a></li>
+                        <li><a href="magazin.html" class="active">Магазин</a></li>
+                        <li><a href="bestsellers.html">Бестселлеры</a></li>
+                        
+                        
+                    </ul>
+                </nav>
+                <div class="search-cart">
+                    <button id="authBtn" style="background: none; border: none; color: white; margin-right: 15px; cursor: pointer;">
+                        <i class="fas fa-user"></i> Войти
+                    </button>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="auth-modal" id="authModal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Вход</div>
+                <div class="auth-tab" data-tab="register">Регистрация</div>
+            </div>
+            <div class="modal-body">
+                <form class="auth-form active" id="loginForm">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <button type="submit">Войти</button>
+                    <div class="auth-switch">
+                        Нет аккаунта? <a id="switchToRegister">Зарегистрироваться</a>
+                    </div>
+                </form>
+                
+                <form class="auth-form" id="registerForm" action="profile.html" method="GET">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <input type="password" placeholder="Повторите пароль" required>
+                    <button type="submit">Зарегистрироваться</button>
+                    <div class="auth-switch">
+                        Уже есть аккаунт? <a id="switchToLogin">Войти</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-us">
+        <div class="container">
+            <h2 class="section-title">О нас</h2>
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <h3>Добро пожаловать в GameHub!</h3>
+                    <p>
+                        Мы - команда энтузиастов, увлеченных видеоиграми так же, как и вы. Наша цель - предоставить вам лучший выбор игр для всех платформ по самым выгодным ценам.
+                    </p>
+                    <p>
+                        В GameHub вы найдете самые свежие новинки, классические хиты и эксклюзивные издания. Мы постоянно работаем над расширением нашего ассортимента, чтобы каждый геймер нашел что-то для себя.
+                    </p>
+                    <p>
+                        Наша команда стремится обеспечить вам удобный и безопасный опыт онлайн-покупок. Мы ценим каждого нашего клиента и всегда готовы помочь с любыми вопросами.
+                    </p>
+                </div>
+                <div class="about-us-image">
+                    <img src="https://resizer.mail.ru/p/e3596f20-2b55-5ea1-b1a5-f3d571dbc9bb/AQAKaSHv3cmnw8akqnXtxN4rmYG7l1ah9S85xbz_TLKsKvOSaDHZePQjuanafRjeM-kraMjqdwJf6k94Nd9laiMhaV4.jpg" alt="О нас">
+                </div>
+            </div>
+            <div class="team">
+                <h3>Наша команда</h3>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="https://avatars.mds.yandex.net/i?id=7cc0cfbfdbe475357d86da2ced0e1134_sr-5888237-images-thumbs&n=13" alt="Владимир">
+                        <h4>Владимир</h4>
+                        <p>Основатель и генеральный директор</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://img09.rl0.ru/afisha/e128x128i/daily.afisha.ru/uploads/images/d/31/d311c73438769bd6365e74f3a966aa28.jpeg" alt="Декстер">
+                        <h4>Декстер</h4>
+                        <p>Менеджер по продажам</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://nztcdn.com/avatar/s/1700996180/7095674.webp" alt="Жессе">
+                        <h4>Жессе</h4>
+                        <p>Технический специалист</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <ul>
+                        <li><a href="aus.html">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul>
+                        <li><a href="help.html">Центр поддержки</a></li>
+                        <li><a href="help.html">Возврат товара</a></li>
+                        <li><a href="help.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Платформы</h3>
+                    <ul>
+                        <li><a href="magazin.html">PC</a></li>
+                        <li><a href="magazin.html">PlayStation</a></li>
+                        <li><a href="magazin.html">Xbox</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: info@gamehub.ru</li>
+                        <li>Телефон: +7 (123) 456-78-90</li>
+                        <li>Адрес: , ул. Пушкина, дом колотушкина </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 GameHub. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

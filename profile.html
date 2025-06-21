@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Мой профиль</title>
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web\css/all.min.css">
+     <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>Game<span>Hub</span>
+                </div>
+                
+                <nav>
+                    <ul>
+                       <li><a href="glavnaya stranica.html">Главная</a></li>
+                        <li><a href="magazin.html" class="active">Магазин</a></li>
+                        <li><a href="bestsellers.html">Бестселлеры</a></li>
+                        
+                    </ul>
+                </nav>
+                
+                <div class="search-cart">
+                    <div class="user-profile" style="margin-right: 15px; color: white; font-weight: 500;">
+                        <i class="fas fa-user-circle" style="margin-right: 5px;"></i><span id="usernameDisplay">Виталий Цаль</span>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <h1>Мой профиль</h1>
+            <div class="breadcrumbs">
+                <a href="glavnaya stranica.html">Главная</a>
+                <span>/</span>
+                <span>Профиль</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <div class="container">
+        <div class="profile-container">
+            <!-- Боковая панель профиля -->
+            <aside class="profile-sidebar">
+                <div class="user-info">
+                    <div class="avatar-container">
+                        <img src="" alt="Аватар пользователя" class="user-avatar" id="userAvatar">
+                        <div class="change-avatar-btn" id="changeAvatarBtn">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <input type="file" id="avatarUpload" class="avatar-upload" accept="image/*">
+                    </div>
+                    <h2 class="user-name" id="userName"></h2>
+                    <p class="user-email" id="userEmail"></p>
+                    
+                    <div class="user-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="ordersCount">0</div>
+                            <div class="stat-label">Заказов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="wishlistCount">0</div>
+                            <div class="stat-label">В списке</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="profile-nav">
+                    <li><a href="#" class="active" data-section="personal-info"><i class="fas fa-user"></i> Личные данные</a></li>
+                    <li><a href="#" data-section="orders"><i class="fas fa-shopping-bag"></i> Мои заказы</a></li>
+                    <li><a href="#" data-section="wishlist"><i class="fas fa-heart"></i> Список желаний</a></li>
+                    <li><a href="#" data-section="change-password"><i class="fas fa-lock"></i> Смена пароля</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Выход</a></li>
+                </ul>
+            </aside>
+            
+            <!-- Основное содержимое профиля -->
+            <main class="profile-main">
+                <!-- Секция личных данных -->
+                <section class="profile-section" id="personal-info">
+                    <h2 class="section-title">Личные данные</h2>
+                    
+                    <form class="personal-info-form" id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Имя</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Фамилия</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthday">Дата рождения</label>
+                            <input type="date" id="birthday">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">Пол</label>
+                            <select id="gender">
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                                <option value="other">Другой</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn">Сохранить изменения</button>
+                    </form>
+                </section>
+                
+                <!-- Секция заказов -->
+                <section class="profile-section" id="orders" style="display: none;">
+                    <h2 class="section-title">Мои заказы</h2>
+                    
+                    <div class="orders-table-container">
+                        <table class="orders-table" id="ordersTable">
+                            <thead>
+                                <tr>
+                                    <th>№ заказа</th>
+                                    <th>Дата</th>
+                                    <th>Игры</th>
+                                    <th>Сумма</th>
+                                    <th>Статус</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Заказы будут загружены через JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- Секция списка желаний -->
+                <section class="profile-section" id="wishlist" style="display: none;">
+                    <h2 class="section-title">Список желаний</h2>
+                    
+                    <div class="wishlist-grid" id="wishlistGrid">
+                        <!-- Игры из списка желаний будут загружены через JavaScript -->
+                    </div>
+                </section>
+                
+                <!-- Секция смены пароля -->
+                <section class="profile-section" id="change-password" style="display: none;">
+                    <h2 class="section-title">Смена пароля</h2>
+                    
+                    <form class="personal-info-form" id="passwordForm">
+                        <div class="form-group">
+                            <label for="current-password">Текущий пароль</label>
+                            <input type="password" id="current-password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new-password">Новый пароль</label>
+                            <input type="password" id="new-password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Подтвердите новый пароль</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn">Изменить пароль</button>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                
+                
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul>
+                       <li><a href="help.html">Центр поддержки</a></li>
+                        <li><a href="help.html">Возврат товара</a></li>
+                        <li><a href="help.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Платформы</h3>
+                    <ul>
+                        <li><a href="#">PC</a></li>
+                        <li><a href="#">PlayStation</a></li>
+                        <li><a href="#">Xbox</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: info@gamehub.ru</li>
+                        <li>Телефон: +7 (123) 456-78-90</li>
+                        <li>Адрес: Караганда Улица: Гагарина 52 </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 GameHub. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Ваша корзина</h2>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">Ваша корзина пуста</div>
+                </div>
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span id="cartTotal">0 ₸</span>
+                </div>
+                <a href="korzina.html" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 20px;">Оформить заказ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Modal -->
+    <div class="modal" id="avatarModal">
+        <div class="modal-content avatar-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Смена аватара</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://sun1-22.userapi.com/impg/fUyy-Ep7IkInd37uLgQkpSjD_9ek-zsY4zGwtg/CMo64kAgWkc.jpg?size=972x720&quality=96&sign=6bffbf6a72fd7d191dc114dfb4896058&c_uniq_tag=0hdASHdpOh5nRpWsecUn6hqP3uB3TymrMynWcpzF3tI&type=album" alt="Предпросмотр аватара" class="avatar-preview" id="avatarPreview">
+                
+                <div class="avatar-options">
+                    <button class="avatar-option-btn" id="uploadAvatarBtn">
+                        <i class="fas fa-upload"></i> Загрузить фото
+                    </button>
+                    <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
+                    
+                    <button class="avatar-option-btn" id="defaultAvatarBtn">
+                        <i class="fas fa-user"></i> Выбрать стандартный аватар
+                    </button>
+                    
+                    <button class="btn" id="saveAvatarBtn" style="width: 100%; margin-top: 20px;">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js">
+  
+    </script>
+</body>
+</html>

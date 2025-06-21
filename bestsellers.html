@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Новинки видеоигр</title>
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>Game<span>Hub</span>
+                </div>
+                <nav>
+                    <ul>
+                     <li><a href="glavnaya stranica.html">Главная</a></li>
+                        <li><a href="magazin.html" class="active">Магазин</a></li>
+                  <li><a href="bestsellers.html">Бестселлеры</a></li>
+                        
+                    </ul>
+                </nav>
+                <div class="search-cart">
+                    <button id="authBtn" style="background: none; border: none; color: white; margin-right: 15px; cursor: pointer;">
+                        <i class="fas fa-user"></i> Войти
+                    </button>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="auth-modal" id="authModal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Вход</div>
+                <div class="auth-tab" data-tab="register">Регистрация</div>
+            </div>
+            <div class="modal-body">
+                <form class="auth-form active" id="loginForm">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <button class="btn" type="submit">Войти</button>
+                    <div class="auth-switch">
+                        Нет аккаунта? <a class="" id="switchToRegister">Зарегистрироваться</a>
+                    </div>
+                </form>
+                
+                <form class="auth-form" id="registerForm" action="profile.html" method="GET">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <input type="password" placeholder="Повторите пароль" required>
+                    <button class="btn" type="submit">Зарегистрироваться</button>
+                    <div class="auth-switch">
+                        Уже есть аккаунт? <a id="switchToLogin">Войти</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Лидеры продаж </h1>
+            <p> Топ самых продаваемых игр по объему выручки на данный момент</p>
+            <a href="magazin.html" class="btn">В магазин</a>
+        </div>
+    </section>
+    
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Топ продаж</h2>
+            <div class="games-grid" id="newGamesGrid"></div>
+        </div>
+    </section>
+    
+    
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+               
+                
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul>
+                         <li><a href="help.html">Центр поддержки</a></li>
+                        <li><a href="help.html">Возврат товара</a></li>
+                        <li><a href="help.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Платформы</h3>
+                    <ul>
+                        <li><a href="magazin.html">PC</a></li>
+                        <li><a href="magazin.html">PlayStation</a></li>
+                        <li><a href="magazin.html">Xbox</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: info@gamehub.ru</li>
+                        <li>Телефон: +7 (123) 456-78-90</li>
+                        <li>Адрес: Караганда Улица: Гагарина 52 </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 GameHub. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Ваша корзина</h2>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">Ваша корзина пуста</div>
+                </div>
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span id="cartTotal">0 ₸</span>
+                </div>
+                <a class="btn" style="width: 100%; margin-top: 20px;" href="korzina.html">Оформить заказ</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Корзина</title>
+    <link rel="stylesheet"  href="fontawesome-free-6.7.2-web\css/all.min.css">
+    <link rel="stylesheet"  href="main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>Game<span>Hub</span>
+                </div>
+                
+                <nav>
+                    <ul>
+                  <li><a href="glavnaya stranica.html">Главная</a></li>
+                        <li><a href="magazin.html" class="active">Магазин</a></li>
+                    <li><a href="bestsellers.html">Бестселлеры</a></li>
+                        
+                    </ul>
+                </nav>
+                
+               <div class="search-cart">
+                    <div class="user-profile" style="margin-right: 15px; color: white; font-weight: 500;">
+                        <i class="fas fa-user-circle" style="margin-right: 5px;"></i><span id="usernameDisplay">Виталий Цаль</span>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+      
+    </header>
+
+   
+    <section class="cart-header">
+        <div class="container">
+            <h1>Ваша корзина</h1>
+            <div class="breadcrumbs">
+                <a href="glavnaya stranica.html">Главная</a>
+                <span>/</span>
+                <span>Корзина</span>
+            </div>
+        </div>
+    </section>
+
+ 
+    <div class="container">
+        <div class="cart-container">
+           
+            <main class="cart-items-section">
+                <h2 class="section-title">Товары в корзине</h2>
+                
+              <div class="cart-items-list" id="cartItemsList">
+    </div>
+                
+                <div class="cart-actions">
+                    <a href="magazin.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Продолжить покупки
+                    </a>
+                </div>
+            </main>
+            
+            <!-- Боковая панель с итогами -->
+            <aside class="cart-summary">
+                <h2 class="section-title">Итог заказа</h2>
+                
+                <div class="summary-details" id="summaryDetails">
+                    <!-- Итоги будут загружены через JavaScript -->
+                </div>
+                
+                <a href="oplata.html" class="btn" id="checkoutBtn" disabled>
+                    Перейти к оплате <i class="fas fa-arrow-right"></i>
+                </a>
+            </aside>
+        </div>
+    </div>
+    <div class="modal" id="cartModal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+            <h2>Ваша корзина</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotal">0 ₸</span>
+            </div>
+            <a href="korzina.html" class="btn">Оформить заказ</a>
+        </div>
+    </div>
+</div>
+
+<!-- Auth Modal -->
+<div class="modal" id="authModal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="auth-tabs">
+            <div class="auth-tab active" data-tab="login">Вход</div>
+            <div class="auth-tab" data-tab="register">Регистрация</div>
+        </div>
+        
+        <form id="loginForm" class="auth-form active">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Пароль</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn">Войти</button>
+        </form>
+        
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="registerName">Имя</label>
+                <input type="text" id="registerName" required>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Пароль</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="registerConfirmPassword">Подтвердите пароль</label>
+                <input type="password" id="registerConfirmPassword" required>
+            </div>
+            <button type="submit" class="btn">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                
+                
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul>
+                         <li><a href="help.html">Центр поддержки</a></li>
+                        <li><a href="help.html">Возврат товара</a></li>
+                        <li><a href="help.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Платформы</h3>
+                    <ul>
+                        <li><a href="magazin.html">PC</a></li>
+                        <li><a href="magazin.html">PlayStation</a></li>
+                        <li><a href="magazin.html">Xbox</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: info@gamehub.ru</li>
+                        <li>Телефон: +7 (123) 456-78-90</li>
+                        <li>Адрес: Караганда Улица: Гагарина 52 </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 GameHub. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js">
+  
+    </script>
+</body>
+</html>
